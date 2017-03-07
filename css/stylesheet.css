@@ -13,7 +13,13 @@ body {
 
 .top_header_bar_user_choices{
     padding-left: 10px;
-    padding-right: 10px;
+    text-decoration: none !important;
+
+
+}
+
+.top_header_bar_user_choices :hover{
+    transition: 0.25s;
 }
 
 .banner_bar{
@@ -27,31 +33,33 @@ body {
     background-position: center;
 }
 
-.delivery {
+.banner_bar_delivery {
     line-height: 15px;
     text-align: center;
 
 }
-.working_hours {
+.banner_bar_working_hours {
     font-size: 11px;
     font-weight: bold;
 }
 
-.telephone {
+.banner_bar_telephone {
     font-size: 18px;
     font-weight: bold;
 }
 
-#cart {
-    margin-bottom: 10px;
-    line-height: 1;
-    color: white;
+.banner_bar_cart {
+    line-height: 15px;
     font-size: 13px;
     font-weight: bold;
+    display: block;
+    text-align: right;
 }
 
-#cart_summary{
+.banner_bar_cart_summary{
     font-weight: normal;
+    text-align: right;
+    display: block;
 }
 
 #menu {
