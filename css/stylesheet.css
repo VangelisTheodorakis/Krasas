@@ -27,11 +27,19 @@ body {
     padding-bottom: 15px;
 }
 
+.banner_bar_link{
+    display: inline-block;
+}
+
 .banner_bar_logo {
-    background-image: url("../icons/krasas-new-logo.png");
+    background: url("../icons/krasas-new-logo.png") no-repeat;
     height: 90px;
     background-position: center;
+    width: 255px;
+
 }
+
+
 
 .banner_bar_delivery {
     line-height: 15px;
@@ -62,10 +70,16 @@ body {
     display: block;
 }
 
-#menu {
-    min-height: 40px;
+.ribbon_bar{
+    font-size: 15px;
     font-weight: bold;
-    background: transparent;
+    color: white;
+    text-align: center;
+}
+
+.ribbon_bar_ribbon_content{
+    background-color: red;
+    display: inline-block;
 }
 
 .red_color{
