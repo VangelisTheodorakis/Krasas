@@ -1,7 +1,9 @@
-body {
-    background-color: seagreen;
+html,body {
+    background-color: pink;
     font-family: "Open Sans",sans-serif;
     font-size: 12px;
+    height: 100%;
+    width: 100%;
 }
 
 /*  Header    */
@@ -82,6 +84,19 @@ body {
     display: inline-block;
 }
 
+.ribbon_bar_choice{
+    color: white;
+    padding: 5px;
+    display: inline-block;
+
+}
+
+.ribbon_bar_choice:hover{
+    background-color:white;
+    color: red;
+    text-decoration: none !important;
+}
+
 .red_color{
     color: red;
 }
@@ -98,32 +113,9 @@ body {
     color: white;
 }
 
-#catalog_list{
-    text-align: center;
 
-}
 
-#catalog_list > ul > li{
-    white-space: nowrap;
-    display: inline-block;
-}
 
-#catalog_list > ul > li > a{
-    display:inline-block;
-    outline: 0;
-}
-
-#catalog_list > ul > li:not(:last-child):after{
-    content: " \00b7";
-    display:inline-block;
-}
-
-#catalog_list .navbar-nav{
-    display: inline-block;
-    float:none;
-    margin:0 auto;
-    background: #AF2024;
-}
 
 /*/*/
 
