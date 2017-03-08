@@ -281,6 +281,7 @@ html,body {
     padding: 5px;
     color: red;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .section_circles_product_title_link:hover{
@@ -291,6 +292,7 @@ html,body {
     display: block;
     text-align: center;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .section_circles_product:hover{
@@ -303,6 +305,13 @@ html,body {
     padding-left: 10px;
     padding-right: 10px;
     font-weight: bold;
+    border: 2px solid red;
+}
+
+.section_circles_cart_button:hover{
+    background-color: white;
+    color: red;
+    text-decoration: none;
 }
 
 /*  Catalog    */
@@ -453,6 +462,28 @@ html,body {
 
     .quote_bar_line{
         font-size: 15px;
+    }
+
+
+    /*  Section   */
+
+    .coupon_bar > .col-xs-12{
+        text-align: center;
+    }
+
+    .coupon_bar_text{
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .section_header_bar{
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .section_header_bar > .col-xs-1, .section_header_bar > .col-xs-10{
+        padding-right: 0;
+        padding-left: 0;
     }
 
     /*  Footer   */
