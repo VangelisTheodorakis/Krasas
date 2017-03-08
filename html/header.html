@@ -3,15 +3,15 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6">
             </div>
-            <div class="col-xs-6 col-sm-6 text-right">
-                <a id="sign_in" class="top_header_bar_user_choices" href="" title="Sign in">
+            <div class="col-xs-12 col-sm-6 top_header_bar_user_choices">
+                <a id="sign_in" class="top_header_bar_user_choice" href="" title="Sign in">
                     <i class="fa fa-user">
                     </i>
                     <span>
                         Σύνδεση
                     </span>
                 </a>
-                <a id="sign_up" class="top_header_bar_user_choices" href="" title="Sign up">
+                <a id="sign_up" class="top_header_bar_user_choice" href="" title="Sign up">
                     <span>
                         Εγγραφή
                     </span>
@@ -57,26 +57,24 @@
     </div>
 </div>
 <div class="ribbon_bar">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <button class="btn btn-navbar navbar-toggle col-xs-12 " type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="visible-xs text-left">
-                        Κατηγορίες
-                    </span>
-                    <i id="bars" class="fa fa-bars"></i>
-                </button>
+    <div class="container ribbon_bar_responsive_container">
+            <div class="row navbar-header">
+                <div class="col-xs-12">
+                    <button class="ribbon_bar_small_responsive navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#ribbon_bar_responsive" aria-expanded="false">
+                        <span class="visible-xs ribbon_bar_small_responsive_text">
+                            Κατηγορίες
+                        </span>
+                        <i id="bars" class="fa fa-bars pull-right"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class=" navbar-collapse navbar-ex1-collapse collapse" aria-expanded="true">
-            <div class="ribbon_bar_ribbon_content">
-                <a class="ribbon_bar_choice"  href="krasopites.html">
+        <div id="ribbon_bar_responsive" class=" navbar-collapse collapse" aria-expanded="false">
+            <div class=" ribbon_bar_ribbon_content">
+                <a class=" ribbon_bar_choice"  href="krasopites.html">
                     <span >
                         ΚΑΤΑΛΟΓΟΣ
                     </span>
-
                 </a>
-
                 <i class="fa fa-circle"></i>
                 <a class="ribbon_bar_choice" href="krasopites.html">
                     <span>
@@ -84,14 +82,12 @@
                     </span>
                 </a>
                 <i class="fa fa-circle"></i>
-
                 <a class="ribbon_bar_choice" href="krasopites.html">
                     <span>
                         ΠΙΤΕΣ
                     </span>
                 </a>
                 <i class="fa fa-circle"></i>
-
                 <a class="ribbon_bar_choice" href="krasopites.html">
                     <span>
                         ΠΙΤΣΕΣ
@@ -108,11 +104,13 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <span class="quote_line">
-        Lorem <b>ipisum</b> dolor sit amet,
-    </span>
-    <span class="quote_line">
+<div class="quote_bar">
+    <div class="container">
+        <span class="quote_bar_line">
+            Lorem <b>ipisum</b> dolor sit amet,
+        </span>
+        <span class="quote_bar_line">
             consectetur <b>adipiscing</b> elit.
-    </span>
+        </span>
+    </div>
 </div>

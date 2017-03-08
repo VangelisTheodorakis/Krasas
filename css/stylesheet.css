@@ -1,9 +1,11 @@
 html,body {
-    background-color: pink;
+    background-color: cadetblue;
     font-family: "Open Sans",sans-serif;
     font-size: 12px;
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /*  Header    */
@@ -14,10 +16,12 @@ html,body {
 }
 
 .top_header_bar_user_choices{
+    text-align: right;
+}
+
+.top_header_bar_user_choice{
     padding-left: 10px;
     text-decoration: none !important;
-
-
 }
 
 .top_header_bar_user_choices :hover{
@@ -77,6 +81,8 @@ html,body {
     font-weight: bold;
     color: white;
     text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 .ribbon_bar_ribbon_content{
@@ -97,6 +103,20 @@ html,body {
     text-decoration: none !important;
 }
 
+.quote_bar{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.quote_bar_line{
+    display: block;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
 .red_color{
     color: red;
 }
@@ -111,21 +131,6 @@ html,body {
 
 .white_color{
     color: white;
-}
-
-
-
-
-
-/*/*/
-
-.quote_line{
-    display: block;
-    font-size: 24px;
-    color: white;
-    text-align: center;
-    margin-bottom: 5px;
-    margin-top: 5px;
 }
 
 /*  Section    */
@@ -293,4 +298,65 @@ html,body {
 /*/*/
 .list-unstyled li a:hover{
     font-weight: bold;
+}
+
+/*  Responsive  */
+
+/*  Header      */
+
+@media only screen and (max-width: 768px){
+
+    .top_header_bar_user_choices{
+        text-align: center;
+    }
+
+    .banner_bar_link{
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+    .banner_bar_delivery{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .banner_bar_cart{
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    .banner_bar_cart_summary{
+        padding-bottom: 5px;
+        text-align: center;
+    }
+
+    .ribbon_bar_responsive_container{
+        position: relative;
+    }
+
+    .ribbon_bar_small_responsive{
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        background-color: red;
+    }
+
+    .ribbon_bar_small_responsive_text{
+        display: inline-block !important;
+    }
+
+    #ribbon_bar_responsive{
+        background-color: red;
+        z-index: 9999;
+        position: absolute;
+        top: 24px;
+        margin-left: 15px;
+        margin-right: 15px;
+        left: 0;
+        right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
