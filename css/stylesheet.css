@@ -147,24 +147,62 @@ html,body {
 
 /*  Section    */
 
-/*/*/
 #section{
     background-color: white;
     min-height: 400px;
 }
 
-.coupon_part{
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-    padding-left: 0;
-    padding-right: 0;
-}
-#coupon_text{
-    color: white;
+.coupon_bar{
+    margin: 10px 0 10px 0;
+    display: block;
     background-color: red;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    color: white;
+    line-height: 34px;
+    font-size: 14px;
+}
+
+.coupon_bar > div{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.coupon_bar_text{
+    display: block;
+    text-align: right;
+}
+
+.coupon_bar_input{
+    margin-bottom: auto;
+    margin-top: auto;
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    color: red;
+    text-align: center;
+    padding: 0;
+}
+.coupon_bar_button{
+    font-weight: bold;
+    padding: 5px;
+}
+
+.coupon_bar_button:hover{
+    cursor: pointer;
+    color: red;
+    background-color: white;
+}
+
+.section_header_bar{
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 38px;
+}
+
+.section_header_bar_parallel_lines{
+    background-image: url("../icons/krasas_theodor_bar.png");
+    background-repeat: repeat-x;
+    height: 38px;
+
 }
 
 #category{
