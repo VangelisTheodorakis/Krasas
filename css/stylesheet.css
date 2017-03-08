@@ -88,11 +88,25 @@ html,body {
     display: inline-block;
 }
 
+.ribbon_bar_ribbon_content:hover{
+    cursor: default;
+}
+
 .ribbon_bar_choice{
     color: white;
     padding: 5px;
     display: inline-block;
+    text-decoration: none;
+}
 
+.fa-circle{
+    vertical-align: middle;
+    padding: 5px;
+    font-size: 8px;
+}
+
+.fa-circle:hover{
+    cursor: default;
 }
 
 .ribbon_bar_choice:hover{
@@ -290,9 +304,7 @@ html,body {
     background-color: #414143;
 }
 
-
-/*/*/
-.list-unstyled li a:hover{
+.footer_bar_social_networks {
     font-weight: bold;
 }
 
