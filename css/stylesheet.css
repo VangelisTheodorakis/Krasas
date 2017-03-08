@@ -43,13 +43,12 @@ html,body {
     background-size: contain;
 }
 
-
-
 .banner_bar_delivery {
     line-height: 15px;
     text-align: center;
 
 }
+
 .banner_bar_working_hours {
     font-size: 11px;
     font-weight: bold;
@@ -153,7 +152,7 @@ html,body {
 }
 
 .coupon_bar{
-    margin: 10px 0 10px 0;
+    margin: 20px 0 10px 0;
     display: block;
     background-color: red;
     color: white;
@@ -165,6 +164,7 @@ html,body {
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .coupon_bar_text{
     display: block;
     text-align: right;
@@ -180,6 +180,7 @@ html,body {
     text-align: center;
     padding: 0;
 }
+
 .coupon_bar_button{
     font-weight: bold;
     padding: 5px;
@@ -196,81 +197,112 @@ html,body {
     font-weight: bold;
     text-align: center;
     line-height: 38px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .section_header_bar_parallel_lines{
     background-image: url("../icons/krasas_theodor_bar.png");
     background-repeat: repeat-x;
     height: 38px;
-
 }
 
-#category{
+.section_banner_bar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.section_banner_bar_banner{
+    background-size: contain;
+    height: 300px;
+    background: url("../icons/top-menu-bg.jpg") no-repeat center;
+}
+
+.section_header_description_bar{
+    font-size: 18px;
+    line-height: 20px;
     text-align: center;
-    vertical-align: middle;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
+.section_header_description_bar_title{
+    padding-bottom: 10px;
 }
-#category_text{
-    font-weight: bold;
-    min-height: 30px;
-    font-size: 24px;
-    line-height: 30px;
+
+.section_header_description_bar_ad{}
+
+.section_circles{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-.category_paraller_lines{
-    background: red;
-    padding-right: 10px;
-    padding-left: 10px;
-    min-height: 30px;
-}
-#photo{
-    width: 100%;
-    min-height: 200px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid magenta;
-    display: block;
+
+.section_circles_product_image{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background: gray url("../icons/krasas-new-logo.png") no-repeat center;
+    background-size: contain;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
     margin-right: auto;
-
 }
 
-#products_panel{
-    font-size: 16px;
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+.section_circles_circle_image{
+    background: transparent url("../icons/product-mask.png") no-repeat center;
+    background-size: contain;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    z-index: 9999;
+    top: 0px;
+    left: 0px;
 }
 
-#products_panel > .row{
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-.product_info{
+.section_circles_image_link{
     display: block;
-
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
-.cart_button{
+
+.section_circles_product_title{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.section_circles_product_title_link{
+    padding: 5px;
+    color: red;
+    text-decoration: none;
+}
+
+.section_circles_product_title_link:hover{
+    text-decoration: none;
+}
+
+.section_circles_product {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.section_circles_product:hover{
+    text-decoration: none;
+}
+
+.section_circles_cart_button{
     background-color: red;
     display: inline-block;
     padding-left: 10px;
     padding-right: 10px;
     font-weight: bold;
-}
-.round_img{
-    border-radius: 50%;
-    border: 2px solid red;
-    height: 128px;
-    width: 128px;
-    background-color: gray;
-}
-#category_description{
-    text-align: center;
-    font-size: 18px;
-}
-
-#category_description > span{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: block;
 }
 
 /*  Catalog    */
