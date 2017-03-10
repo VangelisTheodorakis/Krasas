@@ -139,11 +139,15 @@ html,body {
     color: white;
 }
 
-/*  Section    */
+/**********     Section    **********/
+
+/***            Index             ***/
 
 #section{
     background-color: white;
     min-height: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .coupon_bar{
@@ -308,18 +312,44 @@ html,body {
     text-decoration: none;
 }
 
-/*  Catalog    */
+/***            Catalog             ***/
 
-#catalog_choice{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.section_catalog_banner{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-#catalog_menu{
-    background-color: gray;
-    font:bold 16px solid black;
+.section_catalog_banner_menu_logo{
     text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: gray;
+    border-top: 4px solid gray;
+    border-bottom: 4px solid gray;
+}
+
+.section_catalog_menu_column{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section_catalog_menu_item{
+    background-color: gray;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.section_catalog_menu_item:hover{
+    background-color: orange;
     cursor: pointer;
+    text-decoration: none;
+
 }
 
 #catalog_menu > div{
