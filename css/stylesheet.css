@@ -352,6 +352,25 @@ html,body {
 
 }
 
+.section_catalog_items_column_new_item{
+    width: 18px;
+    margin-left: 15px;
+    padding: 0;
+}
+
+.section_catalog_items_column_new_item_logo{
+    padding: 1px;
+    background-color: purple;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    color: wheat;
+    font-weight: bold;
+
+}
+
 #catalog_menu > div{
     vertical-align: middle;
     display: block;
