@@ -439,6 +439,130 @@ html,body {
     cursor: pointer;
 }
 
+/*      Product         */
+
+.section_product_header_row{}
+
+.section_product_photo{
+    padding-top: 100%;
+    background: url("../icons/krasas-new-logo.png") no-repeat center;
+    background-size: contain;
+    border: 2px solid red;
+}
+
+.section_product_title{
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+}
+
+.section_product_prices{
+    text-align: right;
+}
+
+.section_product_prices_xtras {
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.section_product_description_row{}
+
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.section_product_available_choices_box{
+    border: 2px solid red;
+    background-color: #DADADA;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.section_product_available_choices_box_header{
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.section_product_available_choices_box_category_row{
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.section_product_available_choices_box_category{
+    color: #B85154;
+    padding-top: 10px;
+}
+
+.section_product_available_choices_box_category_first_column{
+    color: #414141;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.section_product_available_choices_box_category_multiple_choice{
+    text-align: right;
+    color: #414141;
+}
+
+.section_product_available_choices_box_category_multiple_choice:hover{
+    color: #EE4025;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.section_product_available_choices_box_price_bar{
+    height: 40px;
+    margin-bottom: 20px;
+    margin-top:  10px;
+    position: relative;
+}
+
+.section_product_available_choices_box_price_bar_price{
+    position: absolute;
+    right: 0;
+    height: 40px;
+}
+.section_product_available_choices_box_price_bar_price_left{
+    right: 100px;
+    font-size: 40px;
+}
+
+.section_product_available_choices_box_price_bar_price_left> span{
+    line-height: 34px;
+}
+
+.section_product_available_choices_box_price_bar_price_right{
+    right: 30px;
+}
+
+.section_product_available_choices_box_price_bar_row{
+    display: block;
+    text-align: right;
+}
+
+.section_product_available_choices_box_add_to_cart_row{
+    text-align: right;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+.section_product_available_choices_box_add_to_cart_button{
+    background-color: red;
+    border: 2px solid red;
+    font-size: 14px;
+    padding: 2px;
+    color: white;
+}
+
+.section_product_available_choices_box_add_to_cart_button:hover{
+    background-color: white;
+    color: red;
+    cursor: pointer;
+}
+/* ==================================================================== */
 #catalog_menu > div{
     vertical-align: middle;
     display: block;
@@ -655,6 +779,27 @@ html,body {
 
     .section_catalog_items_column_item_bar_item_description{
         display: none;
+    }
+
+    /*      Product         */
+    .section_product_available_choices_box_category_row{
+        padding-right: 0;
+    }
+
+    .section_product_available_choices_box_price_bar_price_left{
+        right: 60px;
+    }
+
+    .section_product_available_choices_box_price_bar_price_right{
+        right: 10px;
+    }
+
+    .section_product_available_choices_box_add_to_cart_row{
+        padding-right: 10px;
+    }
+
+    .section_product_available_choices_box_category_multiple_choice{
+        padding-left: 0;
     }
     /*  Footer   */
 
