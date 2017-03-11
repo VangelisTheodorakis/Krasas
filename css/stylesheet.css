@@ -352,6 +352,10 @@ html,body {
 
 }
 
+.section_catalog_items_column_item_row{
+    padding-bottom: 20px;
+}
+
 .section_catalog_items_column_new_item{
     width: 18px;
     margin-left: 15px;
@@ -368,7 +372,63 @@ html,body {
     border-radius: 50%;
     color: wheat;
     font-weight: bold;
+    margin-top: 3px;
 
+}
+
+.section_catalog_items_column_item_bar{
+    text-align: left;
+}
+
+.section_catalog_items_column_item_bar_link{
+    text-decoration: none;
+    display: block;
+}
+
+.section_catalog_items_column_item_bar_link:hover{
+    background-color: red;
+    text-decoration: none;
+    color: greenyellow;
+
+}
+
+.section_catalog_items_column_item_bar_link:hover .section_catalog_items_column_item_bar_item_title{
+    color: greenyellow;
+}
+
+.section_catalog_items_column_item_bar_item_title{
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.section_catalog_items_column_item_bar_item_description{
+    color: gray;
+    font-weight: bold;
+}
+
+
+.section_catalog_items_column_item_price{
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
+.section_catalog_items_column_item_add_to_cart_button{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid red;
+    background-color: red;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.section_catalog_items_column_item_add_to_cart_button:hover{
+    background-color: white;
+    color: red;
+    cursor: pointer;
 }
 
 #catalog_menu > div{
@@ -557,8 +617,9 @@ html,body {
     }
 
 
-    /*  Section   */
+    /*      Section        */
 
+    /*      Index          */
     .coupon_bar > .col-xs-12{
         text-align: center;
     }
@@ -578,6 +639,15 @@ html,body {
         padding-left: 0;
     }
 
+    /*      Catalog        */
+
+    .section_catalog_items_column_item_bar{
+        text-align: center;
+    }
+
+    .section_catalog_items_column_item_bar_item_description{
+        display: none;
+    }
     /*  Footer   */
 
     .footer_section{
@@ -588,5 +658,11 @@ html,body {
         font-weight: bold;
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 1279px){
+    .section_catalog_menu_item{
+        font-size: 12px;
     }
 }
