@@ -12,6 +12,12 @@ html,body {
 
 /*  Header    */
 
+.header_bar{
+    background-color: black;
+    position: relative;
+    z-index: 0;
+}
+
 .top_header_bar {
     background-color: #eeeeee;
     border-bottom: 1px solid #e2e2e2;
@@ -146,30 +152,33 @@ html,body {
 #section{
     background-color: white;
     min-height: 400px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 
 .coupon_bar{
-    margin: 20px 0 10px 0;
-    display: block;
-    background-color: red;
     color: white;
     line-height: 34px;
     font-size: 14px;
 }
 
-.coupon_bar > div{
+.coupon_column{
+    margin: 10px 0 10px 0;
+    display: block;
+    background-color: red;
+}
+
+.coupon_column > div{
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.coupon_bar_text{
+.coupon_column_text{
     display: block;
     text-align: right;
 }
 
-.coupon_bar_input{
+.coupon_column_input{
     margin-bottom: auto;
     margin-top: auto;
     display: inline-block;
@@ -180,12 +189,12 @@ html,body {
     padding: 0;
 }
 
-.coupon_bar_button{
+.coupon_column_button{
     font-weight: bold;
     padding: 5px;
 }
 
-.coupon_bar_button:hover{
+.coupon_column_button:hover{
     cursor: pointer;
     color: red;
     background-color: white;
@@ -197,7 +206,6 @@ html,body {
     text-align: center;
     line-height: 38px;
     padding-bottom: 10px;
-    padding-top: 10px;
 }
 
 .section_header_bar_parallel_lines{
@@ -620,11 +628,11 @@ html,body {
     /*      Section        */
 
     /*      Index          */
-    .coupon_bar > .col-xs-12{
+    .coupon_column > .col-xs-12{
         text-align: center;
     }
 
-    .coupon_bar_text{
+    .coupon_column_text{
         text-align: center;
         line-height: 20px;
     }
