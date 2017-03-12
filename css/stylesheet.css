@@ -264,7 +264,7 @@ html,body {
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    z-index: 9999;
+    z-index: 999;
     top: 0;
     left: 0;
 }
@@ -562,56 +562,76 @@ hr{
     color: red;
     cursor: pointer;
 }
-/* ==================================================================== */
-#catalog_menu > div{
-    vertical-align: middle;
-    display: block;
-    padding-top: 5px;
-    padding-bottom: 5px;
+/*      Section Product Popup   */
+
+.section_product_cart_popup_overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
 }
 
-#catalog_menu > div:hover{
-    background-color: orangered;
+.section_product_cart_popup {
+    width: 25%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    top:30%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.catalog_product_item{
-    padding:0;
-}
-
-.catalog_product_item_new{
+.section_product_cart_popup_close_bar{
     text-align: right;
-    font: 12px solid white;
 }
 
-.catalog_product_description{
-    padding:0;
-    line-height: 1.2;
+.section_product_cart_popup_close_X{
+    padding: 3px;
+    border: 2px solid red;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 2px;
 }
 
-.new_product_img{
-
-    background-color: red;
-    border-radius: 50%;
+.section_product_cart_popup_window{
+    border: 2px solid white;
+    background-color: gray;
+    margin-top: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
 }
 
-.inspect_item:hover{
-    background-color: #28a4c9;
-    cursor: pointer;
+.section_product_cart_popup_window_success{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 16px;
+    padding-top: 10px;
+    color: red;
 }
 
-/*  Krasopita */
+.section_product_cart_popup_window_item{
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 21px;
+    padding-top: 10px;
+    color: white;
+}
 
-.item_photo{
-    padding: 0;
-    border: 2px solid rebeccapurple;
-    height: 260px;
-    white-space: nowrap;
+.section_product_cart_popup_window_buttons{
+
 }
-.img_test{
-    vertical-align: middle;
-    height: 100%;
-    width: 100%;
-}
+
 /*  Footer    */
 
 .footer_section{
