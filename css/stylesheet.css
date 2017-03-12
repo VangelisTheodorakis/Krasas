@@ -175,7 +175,7 @@ html,body {
     background-color: white;
 }
 
-/*      Heder Coupon Popup   */
+/*      Header Coupon Popup   */
 
 .coupon_popup_overlay{
     position: fixed;
@@ -386,6 +386,60 @@ html,body {
     color: red;
     text-decoration: none;
 }
+
+.general_add_to_cart_popup_overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    z-index: 9999;
+}
+
+.general_add_to_cart_popup {
+    width: 35%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    top:15%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.general_add_to_cart_popup_close_bar{
+    text-align: right;
+}
+
+.general_add_to_cart_popup_close_X{
+    padding: 3px;
+    border: 2px solid red;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.general_add_to_cart_popup_close_X:hover{
+    cursor: pointer;
+    color: black;
+}
+
+.general_add_to_cart_popup_window{
+    border: 2px solid white;
+    background-color: gray;
+    margin-top: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
 
 /***            Catalog             ***/
 
@@ -819,13 +873,18 @@ hr{
     .coupon_popup{
         width: 55%;
     }
-
     .coupon_column_button{
         font-size: 12px;
     }
 
-    /*      Section        */
-    /*      Catalog       */
+    /*      Section         */
+
+    /*      Index           */
+    .general_add_to_cart_popup{
+        width: 55%;
+    }
+
+    /*      Catalog         */
     .section_header_bar{
         font-size: 26px;
     }
@@ -943,6 +1002,10 @@ hr{
     .section_header_bar > .col-xs-1, .section_header_bar > .col-xs-10{
         padding-right: 0;
         padding-left: 0;
+    }
+
+    .general_add_to_cart_popup{
+        width: 100%;
     }
 
     /*      Catalog        */
