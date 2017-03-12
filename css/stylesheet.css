@@ -574,10 +574,12 @@ hr{
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
+    display: none;
+    z-index: 9999;
 }
 
 .section_product_cart_popup {
-    width: 25%;
+    width: 35%;
     position: relative;
     transition: all 5s ease-in-out;
     top:30%;
@@ -599,6 +601,10 @@ hr{
     font-weight: bold;
     font-size: 14px;
     margin-right: 2px;
+}
+.section_product_cart_popup_close_X:hover{
+    cursor: pointer;
+    color: black;
 }
 
 .section_product_cart_popup_window{
@@ -629,7 +635,25 @@ hr{
 }
 
 .section_product_cart_popup_window_buttons{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
+.section_product_cart_popup_window_button{
+    border: 2px solid white;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.section_product_cart_popup_window_button:hover {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    cursor: pointer;
 }
 
 /*  Footer    */
@@ -694,7 +718,17 @@ hr{
         right: 0;
         border-width: 10px 10px 0 0;
     }
+
+
 }
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+    /*      Popup       */
+
+    .section_product_cart_popup{
+        width: 55%;
+    }
+}
+
 @media only screen and (max-width: 767px){
 
     .top_header_bar_user_choices{
@@ -784,6 +818,7 @@ hr{
     .section_header_bar{
         margin-right: auto;
         margin-left: auto;
+        font-size: 28px;
     }
 
     .section_header_bar > .col-xs-1, .section_header_bar > .col-xs-10{
@@ -792,6 +827,22 @@ hr{
     }
 
     /*      Catalog        */
+
+    .section_product_photo{
+        padding-top: 50%;
+    }
+
+    .section_product_title{
+        font-size: 18px;
+    }
+
+    .section_product_prices{
+        text-align: left;
+    }
+
+    .section_product_prices_xtras{
+        font-size: 12px;
+    }
 
     .section_catalog_items_column_item_bar{
         text-align: center;
@@ -821,7 +872,17 @@ hr{
     .section_product_available_choices_box_category_multiple_choice{
         padding-left: 0;
     }
-    /*  Footer   */
+
+    /*      Popup       */
+
+    .section_product_cart_popup{
+        width: 100%;
+    }
+    .section_product_cart_popup_window_buttons_responsive_space{
+        padding-bottom: 15px;
+    }
+
+    /*  Footer          */
 
     .footer_section{
         text-align: center;
@@ -838,4 +899,7 @@ hr{
     .section_catalog_menu_item{
         font-size: 12px;
     }
+
+    /*      Popup       */
+
 }

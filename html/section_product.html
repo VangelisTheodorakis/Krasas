@@ -20,18 +20,18 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="section_product_photo">
                 </div>
             </div>
             <div class="col-sm-8">
                 <div class="section_product_header_row row">
-                    <div class="col-sm-8">
+                    <div class="col-xs-12 col-sm-8">
                         <span class="section_product_title">
                             ΣΑΛΑΤΑ ΞΙΝΟΜΥΖΗΘΡΑ
                         </span>
                     </div>
-                    <div class="col-sm-4 section_product_prices">
+                    <div class="col-xs-12 col-sm-4 section_product_prices">
                         <span class="section_product_prices_xtras">
                             X,XX€
                         </span>
@@ -73,13 +73,13 @@
                                 <span class="col-sm-offset-3 col-sm-2 section_product_available_choices_box_category_multiple_choice">
                                     Πατάτες
                                 </span>
-                                <span class="col-xs-12 col-sm-1 section_product_available_choices_box_category_multiple_choice">
+                                <span class="col-sm-1 section_product_available_choices_box_category_multiple_choice">
                                 Ρύζι
                                 </span>
-                                <span class="col-xs-12 col-sm-2 section_product_available_choices_box_category_multiple_choice">
+                                <span class="col-sm-2 section_product_available_choices_box_category_multiple_choice">
                                     Μακαρόνια
                                 </span>
-                                <span class="col-xs-12 col-sm-4 section_product_available_choices_box_category_multiple_choice">
+                                <span class="col-sm-4 section_product_available_choices_box_category_multiple_choice">
                                     Μισό Πατάτες - Μισό Ρύζι
                                 </span>
                             </div>
@@ -292,22 +292,26 @@
             </span>
         </div>
         <div class="section_product_cart_popup_window">
-            <div class="section_product_cart_popup_window_success">
-                <span>
+            <div class="row section_product_cart_popup_window_success">
+                <span class="col-xs-12">
                     ΤΟ ΠΡΟΙΟΝ ΠΡΟΣΤΕΘΗΚΕ ΣΤΟ ΚΑΛΑΘΙ ΜΕ ΕΠΙΤΥΧΙΑ
                 </span>
             </div>
-            <div class="section_product_cart_popup_window_item">
-                <span>
+            <div class="row section_product_cart_popup_window_item">
+                <span class="col-xs-12">
                     ΣΑΛΑΤΑ ΞΙΝΟΜΥΖΗΘΡΑ
                 </span>
             </div>
-            <div>
-                <span class="white_color">
-                    ΣΥΝΕΧΕΙΑ ΑΓΟΡΩΝ
-                </span>
-                <span class="white_color">
+            <div class="row section_product_cart_popup_window_buttons">
+                <div class="col-xs-12 col-sm-6 section_product_cart_popup_window_buttons_responsive_space">
+                    <span class="section_product_cart_popup_window_button">
+                        ΣΥΝΕΧΕΙΑ ΑΓΟΡΩΝ
+                    </span>
+                </div>
+                <span class="col-xs-12 col-sm-6">
+                    <span class="section_product_cart_popup_window_button">
                     ΟΛΟΚΛΗΡΩΣΗ ΑΓΟΡΑΣ
+                    </span>
                 </span>
             </div>
         </div>
@@ -324,28 +328,23 @@
 
     jQuery(document).ready(function($){
         //open popup
-        $('#section_product_add_to_cart_button').on('click', function(event){
-            event.preventDefault();
-            $(".section_product_cart_popup_overlay").css("visibility","visible");
-            $(".section_product_cart_popup_overlay").css("opacity","1");
-
+        $('#section_product_add_to_cart_button').on('click', function(){
+            $(".section_product_cart_popup_overlay").css({"display":"block","visibility":"visible","opacity":"1"});
         });
 
-        /*
+
         // /close popup
-        $('#cart_popup.popup').on('click', function(event){
-            if( $(event.target).is('.popup_window_close') || $(event.target).is('#cart_popup.popup') ) {
-                event.preventDefault();
-                $("#cart_popup.popup").removeClass('is-visible');
-            }
+        $('.section_product_cart_popup_close_X').on('click', function(){
+            $(".section_product_cart_popup_overlay").css({"display":"none","visibility":"invisible","opacity":"0"});
         });
         //close popup when clicking the esc keyboard button
         $(document).keyup(function(event){
-            if(event.which=='27'){
-                $('#cart_popup.popup').removeClass('is-visible');
+            if(event.which=='27') {
+                $(".section_product_cart_popup_overlay").css({"display":"none","visibility":"invisible","opacity":"0"});
+
             }
         });
-        */
+
     });
 
 </script>
