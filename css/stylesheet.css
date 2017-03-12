@@ -1,5 +1,5 @@
 html,body {
-    background-color: cadetblue;
+    background-color: white;
     font-family: "Open Sans",sans-serif;
     font-size: 12px;
     height: 100%;
@@ -13,14 +13,12 @@ html,body {
 /*  Header    */
 
 .header_bar{
-    background-color: black;
     position: relative;
-    z-index: 0;
+    background: url("../icons/top-menu-bg.jpg") center;
+    background-size: cover;
 }
 
 .top_header_bar {
-    background-color: #eeeeee;
-    border-bottom: 1px solid #e2e2e2;
 }
 
 .top_header_bar_user_choices{
@@ -28,12 +26,15 @@ html,body {
 }
 
 .top_header_bar_user_choice{
+    color: white;
+    font-weight: bold;
     padding-left: 10px;
     text-decoration: none !important;
 }
 
 .top_header_bar_user_choices :hover{
     transition: 0.25s;
+    color: red;
 }
 
 .banner_bar{
@@ -76,7 +77,8 @@ html,body {
 }
 
 .banner_bar_cart_summary{
-    font-weight: normal;
+    font-weight: bold;
+    color: white;
     text-align: right;
     display: block;
 }
@@ -526,6 +528,7 @@ hr{
     right: 0;
     height: 40px;
 }
+
 .section_product_available_choices_box_price_bar_price_left{
     right: 100px;
     font-size: 40px;
@@ -549,6 +552,7 @@ hr{
     padding-right: 30px;
     padding-bottom: 20px;
 }
+
 .section_product_available_choices_box_add_to_cart_button{
     background-color: red;
     border: 2px solid red;
@@ -562,6 +566,7 @@ hr{
     color: red;
     cursor: pointer;
 }
+
 /*      Section Product Popup   */
 
 .section_product_cart_popup_overlay{
@@ -602,6 +607,7 @@ hr{
     font-size: 14px;
     margin-right: 2px;
 }
+
 .section_product_cart_popup_close_X:hover{
     cursor: pointer;
     color: black;
@@ -649,6 +655,7 @@ hr{
     margin-right: 5px;
     margin-left: 5px;
 }
+
 .section_product_cart_popup_window_button:hover {
     background-color: white;
     color: red;
@@ -672,6 +679,10 @@ hr{
 
 @media only screen and (min-width: 768px){
 
+    .header_bar{
+        z-index: 0;
+    }
+
     .ribbon {
         position: relative;
         background: #ba89b6;
@@ -684,7 +695,7 @@ hr{
         position: absolute;
         display: block;
         bottom: -10px;
-        border: 15px solid #986794;
+        border: 15px solid red;
         z-index: -1;
     }
 
@@ -705,7 +716,7 @@ hr{
         position: absolute;
         display: block;
         border-style: solid;
-        border-color: yellow transparent transparent transparent;
+        border-color: #7F2024 transparent transparent transparent;
         bottom: -10px;
     }
 
@@ -719,14 +730,39 @@ hr{
         border-width: 10px 10px 0 0;
     }
 
+    /*      Section     */
 
+    .section_background_image_left{
+        background: url("../icons/lleft-col-bg-pattern.png") no-repeat center;
+        background-size: contain;
+        padding-top: 50%;
+
+    }
+
+
+    .section_background_image_right{
+        background: url("../icons/right-col-bg-pattern.png") no-repeat center;
+        background-size: contain;
+        padding-top: 50%;
+
+    }
 }
+
 @media only screen and (min-width: 768px) and (max-width: 980px) {
+    /*      Catalog       */
+    .section_header_bar{
+        font-size: 26px;
+    }
+
+    .section_product_available_choices_box_category_multiple_choice{
+        text-align: left;
+    }
     /*      Popup       */
 
     .section_product_cart_popup{
         width: 55%;
     }
+
 }
 
 @media only screen and (max-width: 767px){
@@ -777,7 +813,7 @@ hr{
         background-color: red;
         z-index: 9999;
         position: absolute;
-        top: 23px;
+        top: 19px;
         margin-left: 15px;
         margin-right: 15px;
         left: 0;
@@ -896,6 +932,10 @@ hr{
 }
 
 @media only screen and (max-width: 1279px){
+
+    .section_background_image_left , .section_background_image_right{
+
+    }
     .section_catalog_menu_item{
         font-size: 12px;
     }
