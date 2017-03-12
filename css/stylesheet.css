@@ -131,33 +131,6 @@ html,body {
     margin-top: 5px;
 }
 
-.red_color{
-    color: red;
-}
-
-.gray_color{
-    color: gray;
-}
-
-.black_color{
-    color: black;
-}
-
-.white_color{
-    color: white;
-}
-
-/**********     Section    **********/
-
-/***            Index             ***/
-
-#section{
-    background-color: white;
-    min-height: 400px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
 .coupon_bar{
     color: white;
     line-height: 34px;
@@ -200,6 +173,98 @@ html,body {
     cursor: pointer;
     color: red;
     background-color: white;
+}
+
+/*      Heder Coupon Popup   */
+
+.coupon_popup_overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    z-index: 9999;
+}
+
+.coupon_popup {
+    width: 35%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    top:30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coupon_popup_close_bar{
+    text-align: right;
+}
+
+.coupon_popup_close_X{
+    padding: 3px;
+    border: 2px solid red;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.coupon_popup_close_X:hover{
+    cursor: pointer;
+    color: black;
+}
+
+.coupon_popup_window{
+    border: 2px solid white;
+    background-color: gray;
+    margin-top: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.coupon_popup_window_success{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 16px;
+    padding-top: 20px;
+    color: red;
+    padding-bottom: 20px;
+}
+
+.red_color{
+    color: red;
+}
+
+.gray_color{
+    color: gray;
+}
+
+.black_color{
+    color: black;
+}
+
+.white_color{
+    color: white;
+}
+
+/**********     Section    **********/
+
+/***            Index             ***/
+
+#section{
+    background-color: white;
+    min-height: 400px;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 .section_header_bar{
@@ -749,6 +814,17 @@ hr{
 }
 
 @media only screen and (min-width: 768px) and (max-width: 980px) {
+    /*      Header      */
+
+    .coupon_popup{
+        width: 55%;
+    }
+
+    .coupon_column_button{
+        font-size: 12px;
+    }
+
+    /*      Section        */
     /*      Catalog       */
     .section_header_bar{
         font-size: 26px;
@@ -757,6 +833,7 @@ hr{
     .section_product_available_choices_box_category_multiple_choice{
         text-align: left;
     }
+
     /*      Popup       */
 
     .section_product_cart_popup{
@@ -839,9 +916,6 @@ hr{
     }
 
 
-    /*      Section        */
-
-    /*      Index          */
     .coupon_column > .col-xs-12{
         text-align: center;
     }
@@ -850,6 +924,15 @@ hr{
         text-align: center;
         line-height: 20px;
     }
+
+    .coupon_popup{
+        width: 100%;
+    }
+
+    /*      Section        */
+
+    /*      Index          */
+
 
     .section_header_bar{
         margin-right: auto;
@@ -909,11 +992,12 @@ hr{
         padding-left: 0;
     }
 
-    /*      Popup       */
+/*      Popup       */
 
     .section_product_cart_popup{
         width: 100%;
     }
+
     .section_product_cart_popup_window_buttons_responsive_space{
         padding-bottom: 15px;
     }

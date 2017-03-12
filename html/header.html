@@ -142,3 +142,50 @@
         </div>
     </div>
 </div>
+
+
+<div id="coupon_popup" class="coupon_popup_overlay">
+    <div class="coupon_popup">
+        <div class="coupon_popup_close_bar">
+            <span class="coupon_popup_close_X">
+                &times;
+            </span>
+        </div>
+        <div class="coupon_popup_window">
+            <div class="row coupon_popup_window_success">
+                <span class="col-xs-12">
+                    ΤΟ ΚΟΥΠΟΝΙ ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        //open popup
+        $('#add_coupon').on('click', function(){
+            $(".coupon_popup_overlay").css({"display":"block","visibility":"visible","opacity":"1"});
+        });
+
+
+        // /close popup
+        $('.coupon_popup_close_X').on('click', function(){
+            $(".coupon_popup_overlay").css({"display":"none","visibility":"invisible","opacity":"0"});
+        });
+
+        $('.coupon_popup_overlay').on('click', function(){
+            $(".coupon_popup_overlay").css({"display":"none","visibility":"invisible","opacity":"0"});
+        });
+
+
+        //close popup when clicking the esc keyboard button
+        $(document).keyup(function(event){
+            if(event.which=='27') {
+                $(".coupon_popup_overlay").css({"display":"none","visibility":"invisible","opacity":"0"});
+            }
+        });
+
+    });
+
+</script>
