@@ -15,14 +15,18 @@ def plot_scatter(x, classes, ax=None):
     ax.scatter(x[0, :], x[1, :], color=colors, s=20)
     plt.show()
 
-# test
+# Iris
 iris = ds.load_iris()
+
+# data.T
 iris_y = np.transpose(iris.data)
 
 iris_classes = iris.target
 
 # PPCA
 magic = PPCA()
-magic.fit(iris_y)
 
+magic.fit()
+""""
 plot_scatter(magic.transform(), iris_classes)
+"""
