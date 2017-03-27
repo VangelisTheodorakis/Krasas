@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as plt_cm
 import matplotlib.colors as plt_col
 from ppca import PPCA
+from pca import *
 
 
 def plot_scatter(x, classes, ax=None):
@@ -22,11 +23,16 @@ iris = ds.load_iris()
 iris_y = np.transpose(iris.data)
 
 iris_classes = iris.target
+# PCA
+
+do_PCA()
+
+
 
 # PPCA
-magic = PPCA()
+#magic = PPCA()
 
-magic.fit()
+#magic.fit()
 """"
 plot_scatter(magic.transform(), iris_classes)
 """
