@@ -2,19 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy import transpose as tr
 
-from sklearn.datasets import make_circles
 from sklearn.decomposition import PCA
 
-X, y = make_circles(n_samples=1000, factor=.3, noise=.05)
 
-"""
-X array is D x N
-
-"""
-
-
-def do_PCA(x_array=X):
-    do_plot(x_array, "Dataset")
+def do_PCA(x_array, y):
+    do_plot(x_array, y,"Dataset")
     hat_x_array = np.empty([x_array.shape[0], x_array.shape[1]])
 
     for data_column in range(0, x_array.shape[1]):
@@ -57,11 +49,11 @@ def do_PCA(x_array=X):
 
     print("projection ", projections.shape)
 
-    do_plot(projections.T, "Custom PCA")
-    validate(x_array)
+    do_plot(projections.T, y,  "My_Custom_PCA")
+    validate(x_array, y)
 
 
-def do_plot(data, title):
+def do_plot(data, y, title):
     print("data space" , data.shape)
     plt.scatter(data[y == 0, 0], data[y == 0, 1], color='red', marker='^', alpha=0.5, label='Circle_01')
     plt.scatter(data[y == 1, 0], data[y == 1, 1], color='blue', marker='o', alpha=0.5, label='Circle_02')
@@ -69,28 +61,12 @@ def do_plot(data, title):
     plt.xlabel('Pca_01')
     plt.ylabel('Pca_02')
     plt.legend(numpoints=1, loc='lower right')
-    plt.title('Projection')
-    plt.savefig("Theoretical_01.png")
-    plt.show()
-
-    """"
-    plt.figure()
     plt.title(title)
-    reds = y == 0
-    blues = y == 1
-
-    plt.scatter(data[reds, 0], data[reds, 1], "ro")
-    plt.scatter(data[blues, 0], data[blues, 1], "bo")
-    print(data.shape)
-
-    plt.xlabel("$x_1$")
-    plt.ylabel("$x_2$")
-
+    plt.savefig(title+".png")
     plt.show()
-    """
 
 
-def validate(x_array):
+def validate(x_array, y):
         pca = PCA()
         standard_pca = pca.fit_transform(x_array)
-        do_plot(standard_pca, "Standard PCA")
+        do_plot(standard_pca, y, "Default_PCA")

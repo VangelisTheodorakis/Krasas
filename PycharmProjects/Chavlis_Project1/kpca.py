@@ -4,14 +4,12 @@ from scipy.linalg import eigh
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import make_circles
+
 from sklearn.decomposition import KernelPCA
 
-X, y = make_circles(n_samples=1000, factor=.3, noise=.05)
+def do_KPCA(X, y, gamma=10, n_components=2):
 
-def do_KPCA(X = X, gamma=10, n_components=2):
-
-    do_plot(X, "Initial Data")
+    do_plot(X, y,"Initial Data")
     """
     Implementation of a RBF kernel PCA.
 
@@ -43,14 +41,11 @@ def do_KPCA(X = X, gamma=10, n_components=2):
 
     # Obtaining the i eigenvectors that corresponds to the i highest eigenvalues.
     X_pc = np.column_stack((eigvecs[:,-i] for i in range(1,n_components+1)))
-    do_plot(X_pc, "Custom KPCA")
+    do_plot(X_pc, y,"My_Custom_KPCA")
 
-    kpca = KernelPCA(kernel="rbf", fit_inverse_transform=True, gamma=10)
-    X_kpca = kpca.fit_transform(X)
-    do_plot(X_kpca, "Default Kernel")
     return
 
-def do_plot(data, title):
+def do_plot(data, y,title):
     print("data space" , data.shape)
     plt.scatter(data[y == 0, 0], data[y == 0, 1], color='red', marker='^', alpha=0.5, label='Circle_01')
     plt.scatter(data[y == 1, 0], data[y == 1, 1], color='blue', marker='o', alpha=0.5, label='Circle_02')
@@ -58,6 +53,11 @@ def do_plot(data, title):
     plt.xlabel('Pca_01')
     plt.ylabel('Pca_02')
     plt.legend(numpoints=1, loc='lower right')
-    plt.title('Projection')
-    plt.savefig("Theoretical_03.png")
+    plt.title(title)
+    plt.savefig(title+".png")
     plt.show()
+
+def do_with_variant_kernels(data, y, kernel, title):
+    kpca = KernelPCA(kernel=kernel, fit_inverse_transform=True, gamma=10)
+    X_kpca = kpca.fit_transform(data)
+    do_plot(X_kpca, y,title)

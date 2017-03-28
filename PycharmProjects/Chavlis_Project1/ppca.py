@@ -2,23 +2,15 @@ import numpy as np
 from numpy.linalg import inv
 from numpy import transpose as tr
 import matplotlib.pyplot as plt
-import os
+
 
 from sklearn.decomposition import PCA
 
-def prepare_data():
-    if not os.path.exists("204_mice_data.txt"):
-        file = os.system("wget ftp://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS6nnn/GDS6248/soft/GDS6248.soft.gz")
-        os.system('gunzip GDS6248.soft')
-        os.system('grep -i ILMN GDS6248.soft > Data.txt')
-        os.system('cut -f3- Data.txt > 204_mice_data.txt')
-
-    data = np.loadtxt("204_mice_data.txt")
-    return data
 
 
-def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
-    data = prepare_data()
+
+def do_PPCA(data, final_dimensions=2, sigma=np.random.rand(), maxit=20):
+    data = data
     # print(data)
     rows = data.shape[0]
     columns = data.shape[1]
@@ -125,6 +117,18 @@ def do_plot(data, title):
     plt.scatter(data[0, 0:3], data[1, 0:3], color='red', marker='^', alpha=0.5, label='Baseline')
     plt.scatter(data[0, 3:27], data[1, 3:27], color='blue', marker='o', alpha=0.5, label='Normal')
     plt.scatter(data[0, 27::], data[1, 27::], color='yellow', marker='*', alpha=0.5, label='High')
+    plt.grid(True)
+    plt.xlabel('Pca_01')
+    plt.ylabel('Pca_02')
+    plt.legend(numpoints=1, loc='lower right')
+    plt.title(title)
+    plt.savefig(title+".png")
+    plt.show()
+
+def do_plot_circles(data, y, title):
+    print("data space" , data.shape)
+    plt.scatter(data[y == 0, 0], data[y == 0, 1], color='red', marker='^', alpha=0.5, label='Circle_01')
+    plt.scatter(data[y == 1, 0], data[y == 1, 1], color='blue', marker='o', alpha=0.5, label='Circle_02')
     plt.grid(True)
     plt.xlabel('Pca_01')
     plt.ylabel('Pca_02')
