@@ -21,16 +21,16 @@ X, y = make_circles(n_samples=1000, factor=.3, noise=.05)
 
 # ============================================================
 
-#do_PCA(X, y)
+do_PCA(X, y)
 
 # ============================================================
 
 # KPCA
 
-#do_KPCA(X, y)
+do_KPCA(X, y)
 
-#do_with_variant_kernels(X, y, "rbf", "Gaussian Kernel")
-#do_with_variant_kernels(X, y, "poly", "Polynomial Kernel")
+do_with_variant_kernels(X, y, "rbf", "Gaussian Kernel")
+do_with_variant_kernels(X, y, "poly", "Polynomial Kernel")
 
 
 # ============================================================
@@ -41,4 +41,4 @@ do_PPCA(X, y, 2, np.random.rand(), 20, 1)
 
 # PPCA with real data
 
-#do_PPCA(prepare_data(), y,2, np.random.rand(), 20, 0)
+do_PPCA(prepare_data(), y,2, np.random.rand(), 20, 0)
