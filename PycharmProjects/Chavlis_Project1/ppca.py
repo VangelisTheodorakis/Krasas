@@ -2,26 +2,35 @@ import numpy as np
 from numpy.linalg import inv
 from numpy import transpose as tr
 import matplotlib.pyplot as plt
+import os
 
-from sklearn.datasets import make_circles
 
-X, y = make_circles(n_samples=1000, factor=.3, noise=.05)
+def prepare_data():
+    if not os.path.exists("204_mice_data.txt"):
+        file = os.system("wget ftp://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS6nnn/GDS6248/soft/GDS6248.soft.gz")
+        os.system('gunzip GDS6248.soft')
+        os.system('grep -i ILMN GDS6248.soft > Data.txt')
+        os.system('cut -f3- Data.txt > 204_mice_data.txt')
 
+    data = np.loadtxt("204_mice_data.txt")
+    return data
 
 
 def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
-    data = X
+    data = prepare_data()
+    # print(data)
     rows = data.shape[0]
     columns = data.shape[1]
 
-    do_plot(data,"Initial data")
-
+    #do_plot(data,"Initial data")
+    print("rows", rows)
+    print("columns", columns)
     # W is a DxM array
     w_old = np.random.rand(columns, final_dimensions)
 
     # Initialize array Dx1
     hat_x_array = np.empty([columns, 1])
-    print("rows", rows)
+
     # Construct the array with the mean of each row
     for data_line in range(0, columns):
         #print("test %s", np.mean(.data[data_line]))
@@ -51,14 +60,11 @@ def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
 
     M = tr(w_old).dot(w_old)+sigma_square*np.eye(final_dimensions)
 
-
     for iteration in range(maxit):
         print("M ", inv(M).shape)
-
         print("W old ",w_old.shape)
         print("Normalized ", normalized_x.shape)
         print("++++++++")
-
         E_z = inv(M).dot(tr(w_old)).dot(normalized_x)
         E_z_z_transpose = sigma_square * inv(M) + E_z.dot(tr(E_z))
 
@@ -73,17 +79,17 @@ def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
 
         for n in range(0, rows):
             #print("Normalized x is  and shape is ", normalized_x[:, n].reshape(.columns, 1).shape)
-            w_new_left += normalized_x[:,n].reshape(columns, 1).dot(tr(E_z[:, n].reshape(columns, 1)))
+                w_new_left += normalized_x[:, n].reshape(columns, 1).dot(tr(E_z[:, n].reshape(final_dimensions, 1)))
 
         print("w_new_left---> ",w_new_left.shape)
 
         w_new_right = E_z_z_transpose ** -1
         print("w_new_right---> ", w_new_right.shape)
-        w_new = w_new_left * w_new_right
+        w_new = w_new_left.dot(w_new_right)
         #print("w new ->", w_new)
 
         print("w new shape ->", w_new.shape)
-        print("ez z tra shape", E_z_z_transpose.shape)
+        print   ("ez z tra shape", E_z_z_transpose.shape)
         print("columns", columns)
         print("normalized" , normalized_x.shape)
         print("E z shape", E_z.shape)
@@ -108,10 +114,10 @@ def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
 
     return
 
+
 def do_plot(data, title):
     print("data space", data.shape)
-    plt.scatter(data[y == 0, 0], data[y == 0, 1], color='red', marker='^', alpha=0.5, label='Circle_01')
-    plt.scatter(data[y == 1, 0], data[y == 1, 1], color='blue', marker='o', alpha=0.5, label='Circle_02')
+    plt.scatter(data[:, 0], data[:, 1], color='red', marker='^', alpha=0.5, label='Circle_01')
     plt.grid(True)
     plt.xlabel('Pca_01')
     plt.ylabel('Pca_02')
