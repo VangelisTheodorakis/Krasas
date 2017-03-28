@@ -1,11 +1,17 @@
-rom scipy.spatial.distance import pdist, squareform
+from scipy.spatial.distance import pdist, squareform
 from scipy import exp
 from scipy.linalg import eigh
 import numpy as np
+import matplotlib.pyplot as plt
+
+from sklearn.datasets import make_circles
+from sklearn.decomposition import KernelPCA
 
 X, y = make_circles(n_samples=1000, factor=.3, noise=.05)
 
-def stepwise_kpca(X = X, gamma, n_components):
+def do_KPCA(X = X, gamma=10, n_components=2):
+
+    do_plot(X, "Initial Data")
     """
     Implementation of a RBF kernel PCA.
 
@@ -37,5 +43,21 @@ def stepwise_kpca(X = X, gamma, n_components):
 
     # Obtaining the i eigenvectors that corresponds to the i highest eigenvalues.
     X_pc = np.column_stack((eigvecs[:,-i] for i in range(1,n_components+1)))
+    do_plot(X_pc, "Custom KPCA")
 
-    return X_pc
+    kpca = KernelPCA(kernel="rbf", fit_inverse_transform=True, gamma=10)
+    X_kpca = kpca.fit_transform(X)
+    do_plot(kpca,"Default Kernel")
+    return
+
+def do_plot(data, title):
+    print("data space" , data.shape)
+    plt.scatter(data[y == 0, 0], data[y == 0, 1], color='red', marker='^', alpha=0.5, label='Circle_01')
+    plt.scatter(data[y == 1, 0], data[y == 1, 1], color='blue', marker='o', alpha=0.5, label='Circle_02')
+    plt.grid(True)
+    plt.xlabel('Pca_01')
+    plt.ylabel('Pca_02')
+    plt.legend(numpoints=1, loc='lower right')
+    plt.title('Projection')
+    plt.savefig("Theoretical_03.png")
+    plt.show()
