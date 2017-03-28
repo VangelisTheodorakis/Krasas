@@ -47,16 +47,17 @@ def do_PCA(x_array=X):
     eigenvalues = eigenvalues[idx]
     # select the first n eigenvectors (n is desired dimension
     # of rescaled data array, or dims_rescaled_data)
-    eigenvectors = eigenvectors[:, :2]
-
+    print("--->",eigenvectors.shape)
+    eigenvectors = eigenvectors[:2, :2]
+    print("--->", eigenvectors.shape)
     # carry out the transformation on the data using eigenvectors
     # and return the re-scaled data, eigenvalues, and eigenvectors
     
-    projections = tr(eigenvectors).dot(x_array)
+    projections = eigenvectors.dot(tr(x_array))
 
-    print("projection ", projections)
+    print("projection ", projections.shape)
 
-    do_plot(projections, "Custom PCA")
+    do_plot(projections.T, "Custom PCA")
     validate(x_array)
 
 
