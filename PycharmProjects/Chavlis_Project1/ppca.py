@@ -4,6 +4,7 @@ from numpy import transpose as tr
 import matplotlib.pyplot as plt
 import os
 
+from sklearn.decomposition import PCA
 
 def prepare_data():
     if not os.path.exists("204_mice_data.txt"):
@@ -26,7 +27,7 @@ def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
     print("rows", rows)
     print("columns", columns)
     # W is a DxM array
-    w_old = np.random.rand(columns, final_dimensions)
+    w_old = np.random.rand(rows, final_dimensions)
 
     # Initialize array Dx1
     hat_x_array = np.empty([columns, 1])
@@ -49,7 +50,6 @@ def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
     # print("Hat x array %s", hat_x_array)
 
     normalized_x = np.subtract(normalized_x, hat_x_array.T)
-    normalized_x = tr(normalized_x)
     print("Normalized_x array after subtraction , shape is", normalized_x.shape)
 
     # The old sigma
@@ -76,10 +76,11 @@ def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
         print("E z z transpose  %s", E_z_z_transpose.shape)
 
         print("++++++++", columns)
+        print("E z", E_z.shape)
 
-        for n in range(0, rows):
+        for n in range(0, columns):
             #print("Normalized x is  and shape is ", normalized_x[:, n].reshape(.columns, 1).shape)
-                w_new_left += normalized_x[:, n].reshape(columns, 1).dot(tr(E_z[:, n].reshape(final_dimensions, 1)))
+                w_new_left += normalized_x[:,n].reshape(rows, 1).dot(tr(E_z[:, n].reshape(final_dimensions, 1)))
 
         print("w_new_left---> ",w_new_left.shape)
 
@@ -95,10 +96,10 @@ def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
         print("E z shape", E_z.shape)
         print("rows", rows)
 
-        for n in range(0, rows):
-            sigma_square_new += np.linalg.norm(normalized_x[:, n].reshape(1, columns)) ** 2 \
-                                - 2 * tr(E_z[:, n].reshape(final_dimensions,1))\
-                                .dot(tr(w_new).dot(normalized_x[:, n].reshape(columns,1)))
+        for n in range(0, columns):
+            sigma_square_new += np.linalg.norm(normalized_x[:, n].reshape(1, rows)) ** 2 \
+                                - 2 * tr(E_z[:, n].reshape(final_dimensions, 1))\
+                                .dot(tr(w_new).dot(normalized_x[:, n].reshape(rows, 1)))
 
         sigma_square_new += np.trace(E_z_z_transpose.dot(tr(w_new).dot(w_new)))
         print("sigma new shape ->", sigma_square_new.shape)
@@ -110,18 +111,24 @@ def do_PPCA(final_dimensions=2, sigma=0, maxit=20):
 
     print(final_dimensions, rows, columns)
     U, S ,V = np.linalg.svd(w_old,full_matrices=False)
-    do_plot((tr(U).dot(normalized_x)).T, "New data")
+    print(U.shape)
+    do_plot((tr(U).dot(normalized_x)), "PPCA")
 
+    my_pca = PCA(n_components=2)
+    projected_data = my_pca.fit_transform(data.T).T
+    do_plot(projected_data, "Default PCA")
     return
 
 
 def do_plot(data, title):
     print("data space", data.shape)
-    plt.scatter(data[:, 0], data[:, 1], color='red', marker='^', alpha=0.5, label='Circle_01')
+    plt.scatter(data[0, 0:3], data[1, 0:3], color='red', marker='^', alpha=0.5, label='Baseline')
+    plt.scatter(data[0, 3:27], data[1, 3:27], color='blue', marker='o', alpha=0.5, label='Normal')
+    plt.scatter(data[0, 27::], data[1, 27::], color='yellow', marker='*', alpha=0.5, label='High')
     plt.grid(True)
     plt.xlabel('Pca_01')
     plt.ylabel('Pca_02')
     plt.legend(numpoints=1, loc='lower right')
-    plt.title('Projection')
-    plt.savefig("Theoretical_03.png")
+    plt.title(title)
+    plt.savefig(title+".png")
     plt.show()
