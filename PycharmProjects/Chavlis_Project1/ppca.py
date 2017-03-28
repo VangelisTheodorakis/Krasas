@@ -9,13 +9,15 @@ from sklearn.decomposition import PCA
 
 
 
-def do_PPCA(data, final_dimensions=2, sigma=np.random.rand(), maxit=20):
+def do_PPCA(data, y , final_dimensions, sigma, maxit , do_circles):
     data = data
     # print(data)
     rows = data.shape[0]
     columns = data.shape[1]
 
-    #do_plot(data,"Initial data")
+    if do_circles == 1:
+        do_plot_circles(data, y, "Initial data circles")
+
     print("rows", rows)
     print("columns", columns)
     # W is a DxM array
@@ -104,11 +106,20 @@ def do_PPCA(data, final_dimensions=2, sigma=np.random.rand(), maxit=20):
     print(final_dimensions, rows, columns)
     U, S ,V = np.linalg.svd(w_old,full_matrices=False)
     print(U.shape)
-    do_plot((tr(U).dot(normalized_x)), "PPCA")
+    if do_circles == 1:
+        #do_plot_circles((tr(U).dot(normalized_x)), y, "Custom_PPCA_circles")
+        print("Error here!")
+    else:
+        do_plot((tr(U).dot(normalized_x)), "Custom_PPCA")
 
     my_pca = PCA(n_components=2)
     projected_data = my_pca.fit_transform(data.T).T
-    do_plot(projected_data, "Default PCA")
+
+    if do_circles == 1:
+        #do_plot_circles(projected_data, y, "Default_PPCA_circles")
+        print("Error here!")
+    else:
+        do_plot(projected_data, "Default_PPCA")
     return
 
 
@@ -125,8 +136,10 @@ def do_plot(data, title):
     plt.savefig(title+".png")
     plt.show()
 
+
 def do_plot_circles(data, y, title):
-    print("data space" , data.shape)
+    #data = data.T
+    print("data space", data.shape)
     plt.scatter(data[y == 0, 0], data[y == 0, 1], color='red', marker='^', alpha=0.5, label='Circle_01')
     plt.scatter(data[y == 1, 0], data[y == 1, 1], color='blue', marker='o', alpha=0.5, label='Circle_02')
     plt.grid(True)
