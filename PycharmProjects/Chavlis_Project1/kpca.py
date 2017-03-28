@@ -47,7 +47,7 @@ def do_KPCA(X = X, gamma=10, n_components=2):
 
     kpca = KernelPCA(kernel="rbf", fit_inverse_transform=True, gamma=10)
     X_kpca = kpca.fit_transform(X)
-    do_plot(kpca,"Default Kernel")
+    do_plot(X_kpca, "Default Kernel")
     return
 
 def do_plot(data, title):

@@ -29,12 +29,12 @@ iris_classes = iris.target
 #do_PCA()
 
 
-do_KPCA()
+#do_KPCA()
 
 # PPCA
-#magic = PPCA()
+magic = PPCA()
 
-#magic.fit()
+magic.fit()
 """"
 plot_scatter(magic.transform(), iris_classes)
 """
