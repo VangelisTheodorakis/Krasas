@@ -1,19 +1,61 @@
 from kmeans import *
-from numpy import transpose as tr
-print("204 Methods")
+from mog import *
+from ppca import *
+import os
+
+def prepare_data():
+    if not os.path.exists("204_mice_data.txt"):
+        file = os.system("wget ftp://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS6nnn/GDS6248/soft/GDS6248.soft.gz")
+        os.system('gunzip GDS6248.soft')
+        os.system('grep -i ILMN GDS6248.soft > Data.txt')
+        os.system('cut -f3- Data.txt > 204_mice_data.txt')
+
+    data = np.loadtxt("204_mice_data.txt")
+    return data
 
 
 m1, cov1 = [1, 1], [[0.5, 0], [0, 0.5]]
 m2, cov2 = [-1, -1], [[0.75, 0], [0, 0.75]]
 
-data = np.random.multivariate_normal(m1, cov1, 220)
+data1 = np.random.multivariate_normal(m1, cov1, 220)
 data2 = np.random.multivariate_normal(m2, cov2, 280)
-print(data)
 
-np.append(data, data2)
+data = np.concatenate((data1, data2))
 
-centroids , C = my_kmeans(data, 2, 'distance', 100, 1)
+clusters = 2
 
-print("Data shape ", data.shape)
 
-show(data, C, centroids)
+centroids, C = my_kmeans(data, clusters, 'euclidean', 100, 1)
+show(data.T, C, centroids, 'Euclidean K-Means')
+
+centroids, C = my_kmeans(data, clusters, 'mahalanobis', 100, 1)
+show(data.T, C, centroids, 'Mahalanobis K-Means')
+
+centroids, C = my_kmeans(data, clusters, 'manhattan', 100, 1)
+show(data, C, centroids, 'Manhattan K-Means')
+
+'''
+
+demo_2d(data)
+
+
+'''
+
+
+
+##########################################################
+###     Practical
+##########################################################
+
+clusters = 2
+
+data = do_PPCA(prepare_data(), 0, 2, np.random.rand(), 20, 0)
+
+centroids, C = my_kmeans(data.T, clusters, 'euclidean', 100, 1)
+show(data.T, C, centroids, 'Euclidean K-Means')
+
+centroids, C = my_kmeans(data.T, clusters, 'mahalanobis', 100, 1)
+show(data.T, C, centroids, 'Mahalanobis K-Means')
+
+centroids, C = my_kmeans(data.T, clusters, 'manhattan', 100, 1)
+show(data.T, C, centroids, 'Manhattan K-Means')
