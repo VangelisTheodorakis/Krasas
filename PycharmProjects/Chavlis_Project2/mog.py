@@ -2,7 +2,7 @@ import numpy as np
 import pylab as plt
 
 
-def fit_EM( X, k,max_iters=1000, eps=0.000001):
+def fit_EM( X, k,max_iters=1000, reps = 10, eps=0.000001):
 
     print("fit em")
     # n = number of data-points, d = dimension of data points
@@ -83,28 +83,24 @@ def fit_EM( X, k,max_iters=1000, eps=0.000001):
     return R, params
 
 
-def demo_2d(data):
-    # Load data
-    # X = np.genfromtxt('data1.csv', delimiter=',')
-    ### generate the random data
-    X = data
-    ####
-    '''
-    plt.cla()
-    plt.plot(X, 'ob')
-    plt.draw()
-    plt.ioff()
-    plt.show()
-    print(data)
-    '''
-    R, params = fit_EM(X, 3, max_iters=100)
+def my_mog(X, k, maxiter, reps):
+    R, params = fit_EM(X, k, maxiter, reps)
 
     print("Responsibility shape", R.shape, " Responsibility", R)
 
+    show(X, R, 'Mixture of Gaussians')
+
+def show(X, R, title):
     plt.cla()
-    plt.plot(   X[np.argmax(R, axis=1) == 0], 'ob',
-                X[np.argmax(R, axis=1) == 1], 'or',
-                X[np.argmax(R, axis=1) == 2], 'om')
+    plt.title(title)
+    print(X.shape)
+    if R.shape[1] == 2:
+        plt.plot(X[np.argmax(R, axis=1) == 0], 'ob',X[np.argmax(R, axis=1) == 1], 'or')
+    elif R.shape[1] == 3:
+        plt.plot(X[np.argmax(R, axis=1) == 0], 'ob',
+                 X[np.argmax(R, axis=1) == 1], 'or',
+                 X[np.argmax(R, axis=1) == 2], 'og')
     plt.draw()
     plt.ioff()
+    plt.savefig(title + ".png")
     plt.show()

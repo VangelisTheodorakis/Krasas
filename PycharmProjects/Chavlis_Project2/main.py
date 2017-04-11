@@ -25,21 +25,17 @@ data = np.concatenate((data1, data2))
 clusters = 2
 
 
-centroids, C = my_kmeans(data, clusters, 'euclidean', 100, 1)
-show(data.T, C, centroids, 'Euclidean K-Means')
+my_kmeans(data, clusters, 'euclidean', 100, 1, 0)
 
-centroids, C = my_kmeans(data, clusters, 'mahalanobis', 100, 1)
-show(data.T, C, centroids, 'Mahalanobis K-Means')
+my_kmeans(data, clusters, 'mahalanobis', 100, 1, 0)
 
-centroids, C = my_kmeans(data, clusters, 'manhattan', 100, 1)
-show(data, C, centroids, 'Manhattan K-Means')
-
-'''
-
-demo_2d(data)
+my_kmeans(data, clusters, 'manhattan', 100, 1, 0)
 
 
-'''
+
+my_mog(data, clusters, 100, 1)
+
+
 
 
 
@@ -51,11 +47,9 @@ clusters = 2
 
 data = do_PPCA(prepare_data(), 0, 2, np.random.rand(), 20, 0)
 
-centroids, C = my_kmeans(data.T, clusters, 'euclidean', 100, 1)
-show(data.T, C, centroids, 'Euclidean K-Means')
+my_kmeans(data.T, clusters, 'euclidean', 100, 1, practical = 1)
 
-centroids, C = my_kmeans(data.T, clusters, 'mahalanobis', 100, 1)
-show(data.T, C, centroids, 'Mahalanobis K-Means')
+my_kmeans(data.T, clusters, 'mahalanobis', 100, 1,practical = 1)
 
-centroids, C = my_kmeans(data.T, clusters, 'manhattan', 100, 1)
-show(data.T, C, centroids, 'Manhattan K-Means')
+my_kmeans(data.T, clusters, 'manhattan', 100, 1, practical = 1)
+

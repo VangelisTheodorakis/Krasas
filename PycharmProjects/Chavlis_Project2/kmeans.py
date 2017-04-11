@@ -4,7 +4,7 @@ from numpy import transpose as tr
 plt.ion()
 
 
-def my_kmeans(X, k, distance, maxiter, reps):
+def my_kmeans(X, k, distance, maxiter, reps, practical):
     for replications in range(reps):
         # Randomly pick centroids
         centroids = X[np.random.choice(np.arange(len(X)), k), :]
@@ -23,7 +23,11 @@ def my_kmeans(X, k, distance, maxiter, reps):
                 return
             # Move centroids step
             centroids = [X[C == k].mean(axis=0) for k in range(k)]
-    return np.array(centroids), C
+    if(practical == 1):
+        show(X, C, np.array(centroids), distance+" practical")
+    else:
+        show(X, C, np.array(centroids), distance)
+    return
 
 
 def show(X, C, centroids, title):
@@ -51,4 +55,5 @@ def show(X, C, centroids, title):
     plt.plot(centroids[:, 0], centroids[:, 1], '*m', markersize=20)
     plt.draw()
     plt.ioff()
+    plt.savefig(title + ".png")
     plt.show()
