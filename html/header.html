@@ -1,0 +1,191 @@
+<div class="header_bar container-fluid">
+    <div class="top_header_bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                </div>
+                <div class="col-xs-12 col-sm-6 top_header_bar_user_choices">
+                    <a id="sign_in" class="top_header_bar_user_choice" href="" title="Sign in">
+                        <i class="fa fa-user">
+                        </i>
+                        <span>
+                            Σύνδεση
+                        </span>
+                    </a>
+                    <a id="sign_up" class="top_header_bar_user_choice" href="" title="Sign up">
+                        <span>
+                            Εγγραφή
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner_bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-sm-push-4 col-md-push-4 text-center">
+                    <a class="banner_bar_link" href="index.html">
+                        <div class="banner_bar_logo">
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-sm-pull-4 col-md-pull-4">
+                    <div class="banner_bar_delivery white_color">
+                        <div class="banner_bar_working_hours">
+                            <span class="red_color">
+                                DELIVERY
+                            </span>
+                            <span>
+                                11:00-00:00
+                            </span>
+                        </div>
+                        <span class="banner_bar_telephone">
+                            2810 123 456
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <span class="banner_bar_cart red_color">
+                        Καλάθι Αγορών
+                    </span>
+                        <span class="banner_bar_cart_summary">
+                        0 Αντικείμενα - 0.0 Ευρώ
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ribbon_bar">
+        <div class="container ribbon_bar_responsive_container">
+                <div class="row navbar-header">
+                    <div class="col-xs-12">
+                        <button class="ribbon_bar_small_responsive navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#ribbon_bar_responsive" aria-expanded="false">
+                            <span class="visible-xs ribbon_bar_small_responsive_text">
+                                Κατηγορίες
+                            </span>
+                            <i id="bars" class="fa fa-bars pull-right"></i>
+                        </button>
+                    </div>
+                </div>
+            <div id="ribbon_bar_responsive" class="row navbar-collapse collapse" aria-expanded="false">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="ribbon">
+                        <div class="ribbon_bar_ribbon_content">
+                            <a class=" ribbon_bar_choice"  href="catalog.html">
+                                <span >
+                                    ΚΑΤΑΛΟΓΟΣ
+                                </span>
+                            </a>
+                            <i class="fa fa-circle"></i>
+                            <a class="ribbon_bar_choice" href="krasopites.html">
+                                <span>
+                                    ΚΡΑΣΟΠΙΤΕΣ
+                                </span>
+                            </a>
+                            <i class="fa fa-circle"></i>
+                            <a class="ribbon_bar_choice" href="krasopites.html">
+                                <span>
+                                    ΠΙΤΕΣ
+                                </span>
+                            </a>
+                            <i class="fa fa-circle"></i>
+                            <a class="ribbon_bar_choice" href="krasopites.html">
+                                <span>
+                                    ΠΙΤΣΕΣ
+                                </span>
+                            </a>
+                            <i class="fa fa-circle"></i>
+                            <a class="ribbon_bar_choice" href="krasopites.html">
+                                <span>
+                                    ΕΛΑΦΡΙΕΣ ΓΕΥΣΕΙΣ
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="quote_bar">
+        <div class="container">
+            <span class="quote_bar_line">
+                Lorem <b>ipisum</b> dolor sit amet,
+            </span>
+            <span class="quote_bar_line">
+                consectetur <b>adipiscing</b> elit.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="coupon_bar">
+    <div class="container-fluid">
+        <div class="">
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 " style="padding: 0">
+                <div class="row coupon_column">
+                    <div class="col-xs-12 col-sm-8 col-md-6">
+                    <span class="coupon_column_text">
+                        Πληκτρολογήστε τον κωδικό του κουπονιού σας :
+                    </span>
+                    </div>
+                    <div class="col-xs-6 col-xs-offset-3  col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0">
+                        <input id="coupon_input_text" type="text" placeholder="ΚΟΥΠΟΝΙ" class="form-control coupon_column_input">
+                    </div>
+                    <div class="col-xs-12 col-sm-2 col-md-4">
+                    <span id="add_coupon" class="coupon_column_button white_color">
+                        ΕΦΑΡΜΟΓΗ
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="coupon_popup" class="coupon_popup_overlay">
+    <div class="coupon_popup">
+        <div class="coupon_popup_close_bar">
+            <span class="coupon_popup_close_X">
+                &times;
+            </span>
+        </div>
+        <div class="coupon_popup_window">
+            <div class="row coupon_popup_window_success">
+                <span class="col-xs-12">
+                    ΤΟ ΚΟΥΠΟΝΙ ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        //open popup
+        $('#add_coupon').on('click', function(){
+            $(".coupon_popup_overlay").css({"display":"block","visibility":"visible","opacity":"1"});
+        });
+
+
+        // /close popup
+        $('.coupon_popup_close_X').on('click', function(){
+            $(".coupon_popup_overlay").css({"display":"none","visibility":"invisible","opacity":"0"});
+        });
+
+        $('.coupon_popup_overlay').on('click', function(){
+            $(".coupon_popup_overlay").css({"display":"none","visibility":"invisible","opacity":"0"});
+        });
+
+
+        //close popup when clicking the esc keyboard button
+        $(document).keyup(function(event){
+            if(event.which=='27') {
+                $(".coupon_popup_overlay").css({"display":"none","visibility":"invisible","opacity":"0"});
+            }
+        });
+
+    });
+
+</script>
